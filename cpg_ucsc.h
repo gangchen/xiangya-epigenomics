@@ -34,7 +34,7 @@ cpg_ucsc::cpg_ucsc(char* filename){
 		    atoi(fields[6].c_str()),
 		    atoi(fields[2].c_str()),
 		    atoi(fields[4].c_str()),
-		    atoi(fields[1].c_str()));
+		    fields[1]);
 	cpgs.push_back(c);
       }
     }

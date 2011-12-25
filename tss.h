@@ -4,14 +4,15 @@
 using namespace std;
 
 class tss{
-  int pos, chrom;
+  int pos;
+  string chrom;
 public:
-  tss(int, int);
+  tss(int, string);
   int getPos(){return pos;};
-  int getChrom(){return chrom;};
+  string getChrom(){return chrom;};
 };
 
-tss::tss(int tssPos, int tssChrom){
+tss::tss(int tssPos, string tssChrom){
   pos = tssPos;
   chrom = tssChrom;
 }

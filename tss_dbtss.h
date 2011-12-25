@@ -28,8 +28,8 @@ tss_dbtss::tss_dbtss(char * filename){
       curLine++;
       fields = util::strsplit(strTss, "\t");
       if(curLine > 1){
-	tss t = tss(atoi(fields[5].c_str()),
-		    atoi(fields[3].c_str()));
+	tss t = tss(atoi(fields[5].c_str()),//position
+		    fields[3]); // chromosome
 	tsses.push_back(t);
       }
     }

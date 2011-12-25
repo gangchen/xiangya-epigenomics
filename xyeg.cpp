@@ -13,9 +13,12 @@ using namespace std;
 int main(int argc, char * argv[]){
   cpg_ucsc cpgs = cpg_ucsc(argv[1]);
   cout << "CpG Done" << endl;
-  genes_ucsc genes = genes_ucsc(argv[2]);
-  cout << "Genes Done" << endl;
+  cout << cpgs.cpgs[0].getChrom()<< endl;
+  //genes_ucsc genes = genes_ucsc(argv[2]);
+  //cout << "Genes Done" << endl;
   tss_dbtss tsses = tss_dbtss(argv[3]);
   cout << "TSS Done" << endl;
+
+  cout << tsses.tsses[0].getChrom() << endl;
   return 0;
 }
