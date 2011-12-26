@@ -15,6 +15,7 @@ public:
   int getChromStart(){return chromStart;};
   int getChromEnd(){return chromEnd;};
   string getChrom(){return chrom;};
+  bool operator < (const cpg);
 };
 
 cpg::cpg(int cpgLength, int cpgNum, int cpgChromStart, int cpgChromEnd, string cpgChrom){
@@ -24,4 +25,9 @@ cpg::cpg(int cpgLength, int cpgNum, int cpgChromStart, int cpgChromEnd, string c
     chromEnd = cpgChromEnd;
     chrom = cpgChrom;
 }
+
+bool cpg::operator < (const cpg c){
+  return (chromStart < c.chromStart);
+}
+
 #endif

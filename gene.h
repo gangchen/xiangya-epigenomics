@@ -15,6 +15,7 @@ public:
   int getEnd(){return end;};
   int getChrom(){return chrom;};
   string getName(){return name;};
+  bool operator < (const gene);
 };
 
 gene::gene(int geneStart, int geneEnd, int geneChrom, string geneName){
@@ -22,6 +23,10 @@ gene::gene(int geneStart, int geneEnd, int geneChrom, string geneName){
   end = geneEnd;
   chrom = geneChrom;
   name = geneName;
+}
+
+bool gene::operator < (const gene g){
+  return(start < g.start);
 }
 
 #endif
