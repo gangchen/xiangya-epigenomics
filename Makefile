@@ -5,7 +5,7 @@
 #
 #
 
-xyeg : xyeg.cpp gene.h cpg.h tss.h genes_ucsc.h cpg_ucsc.h tss_dbtss.h
+xyeg : xyeg.cpp gene.h cpg.h tss.h genes_ucsc.h cpg_ucsc.h tss_dbtss.h cpgs.h
 	g++ xyeg.cpp -o xyeg -Wall
 clean:
 	rm xyeg

@@ -6,13 +6,14 @@
 #include <iostream>
 #include <string>
 #include "cpg.h"
+#include "cpgs.h"
 #include "util.h"
 
 using namespace std;
 
 class cpg_ucsc{
 public:
-  vector <cpg> cpgs;
+  cpgs cpgList;
   cpg_ucsc(char *);
 };
 
@@ -33,13 +34,14 @@ cpg_ucsc::cpg_ucsc(char* filename){
 	cpg c = cpg(atoi(fields[5].c_str()), 
 		    atoi(fields[6].c_str()),
 		    atoi(fields[2].c_str()),
-		    atoi(fields[4].c_str()),
+		    atoi(fields[3].c_str()),
 		    fields[1]);
-	cpgs.push_back(c);
+	cpgList.push(c);
       }
     }
   }
-
+  
+  cpgList.sort();
   inputFile.close();
 }
 #endif

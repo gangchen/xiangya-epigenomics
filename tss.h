@@ -10,7 +10,7 @@ public:
   tss(int, string);
   int getPos(){return pos;};
   string getChrom(){return chrom;};
-  bool operator < (const tss);
+  bool operator < (const tss &) const;
 };
 
 tss::tss(int tssPos, string tssChrom){
@@ -18,8 +18,17 @@ tss::tss(int tssPos, string tssChrom){
   chrom = tssChrom;
 }
 
-bool tss::operator < (const tss t){
-  return(pos < t.pos);
+bool tss::operator < (const tss &t) const{
+  if(chrom < t.chrom){
+    return true;
+  }else if(chrom > t.chrom){
+    return false;
+  }else if(chrom == t.chrom){
+    return pos < t.pos;
+  }
+
+  cerr << "ERROR" << endl;
+  return NULL;
 }
 
 #endif

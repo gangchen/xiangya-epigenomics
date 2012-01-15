@@ -29,10 +29,10 @@ genes_ucsc::genes_ucsc(char * filename){
       curLine++;
       fields = util::strsplit(strGene, "\t");
       if(curLine > 1){
-	gene g = gene(atoi(fields[4].c_str()),
-		      atoi(fields[5].c_str()),
-		      atoi(fields[2].c_str()),
-		      fields[1]);
+	gene g = gene(atoi(fields[3].c_str()),
+		      atoi(fields[4].c_str()),
+		      fields[1],
+		      fields[0]);
 	genes.push_back(g);
       }
     }

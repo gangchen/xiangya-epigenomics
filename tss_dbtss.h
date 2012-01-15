@@ -3,14 +3,14 @@
 
 #include <vector>
 #include <fstream>
-#include "tss.h"
+#include "tsses.h"
 #include "util.h"
 
 using namespace std;
 
 class tss_dbtss{
  public:
-  vector<tss> tsses;
+  tsses tssList;
   tss_dbtss(char *);
 };
 
@@ -30,11 +30,12 @@ tss_dbtss::tss_dbtss(char * filename){
       if(curLine > 1){
 	tss t = tss(atoi(fields[5].c_str()),//position
 		    fields[3]); // chromosome
-	tsses.push_back(t);
+	tssList.push(t);
       }
     }
   }
- 
+  
+  tssList.sort();
   inputFile.close();
 }
 
